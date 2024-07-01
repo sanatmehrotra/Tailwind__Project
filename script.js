@@ -23,15 +23,15 @@ function homePageAnimation() {
         ease: Power2
     },'a')
     .to('.lt', {
-       xPercent: -5,
+       xPercent: -10,
        stagger: 0.03,
         ease: Power4
-    },'b')
+    },'a')
     .to('.rt', {
-        xPercent: 5,
+        xPercent: 10,
        stagger: 0.03,
         ease: Power4    
-    },'b')
+    },'a')
     
         
 }
