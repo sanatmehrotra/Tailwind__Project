@@ -1,4 +1,4 @@
-:root{
+:root {
     --salmons: #EF9D71;
     --cyan: #AEDEE0;
     --salmon: salmon;
@@ -11,10 +11,14 @@
 }
 
 body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
     transition: background-color ease-out .5s;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
-*::selection{
+*::selection {
     background-color: var(--salmons);
 }
 
@@ -23,7 +27,7 @@ body[theme="black"] {
 }
 
 body[theme="black"] .section {
-    color: white
+    color: white;
 }
 
 body[theme="cyan"] {
@@ -38,7 +42,7 @@ body[theme="salmon"] {
     background-color: var(--salmon);
 }
 
-body[theme="salmon"] .section{
+body[theme="salmon"] .section {
     color: var(--bsalmon);
 }
 
@@ -46,100 +50,100 @@ body[theme="white"] {
     background-color: var(--white);
 }
 
-body[theme="white"] .section{
+body[theme="white"] .section {
     color: var(--bwhite);
 }
 
 @font-face {
     font-family: "ff";
     src: url("./659dbdfd5a080be8d348316f_PPNeueMachina_\ Light.ttf");
-} 
-
+}
 
 .vfull {
     clip-path: circle(var(--clip) at 50% 50%);
 }
 
-@media (min-width: 600px) {
-    body {
-        font-size: 18px;
-    }
+/* General Styles */
+.section {
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-@media (min-width: 768px) {
-    body {
-        font-size: 20px;
-    }
+h1, h3 {
+    margin: 0;
 }
 
-@media (min-width: 1024px) {
-    body {
-        font-size: 22px;
-    }
+h1 {
+    font-size: 2rem;
 }
 
-@media (min-width: 1440px) {
-    body {
-        font-size: 24px;
-    }
+h3 {
+    font-size: 1.25rem;
 }
 
-.capsules {
-    padding: 0 1rem;
+button {
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    font-size: 1rem;
 }
 
-.capsules .left {
-    padding: 2rem 0;
-}
-
-.capsules .heading h1 {
-    font-size: 3rem;
-}
-
-.capsules .capsule {
-    width: 60vw;
-    height: 60vw;
-}
-
-.capsules .capsule img {
-    width: 100%;
-    height: 100%;
-}
-
-@media (min-width: 768px) {
-    .capsules {
-        padding: 0 2rem;
-    }
-
-    .capsules .left {
-        padding: 4rem 0;
-    }
-
-    .capsules .heading h1 {
-        font-size: 5rem;
-    }
-
-    .capsules .capsule {
-        width: 40vw;
-        height: 40vw;
-    }
-}
-
+/* Responsive Styles */
 @media (min-width: 1024px) {
     .capsules {
-        padding: 0 4rem;
+        flex-direction: row;
     }
 
-    .capsules .left {
-        padding: 5rem 0;
+    .capsule {
+        width: 25%;
+        margin: 1rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .capsules {
+        padding: 20px;
+        flex-direction: column;
     }
 
-    .capsules .heading h1 {
-        font-size: 6rem;
+    .capsule {
+        width: 80%;
+        margin: 10px auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .home, .team, .para, .capsules {
+        padding: 15px;
     }
 
-    .capsules .capsule {
-        width: 25vw;
-        height: 25vw;
+    .capsule {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .team .listlem {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .team .pic {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .heading h1 {
+        font-size: 1.5rem;
+    }
+
+    .textpara {
+        font-size: 1rem;
+    }
+
+    button {
+        font-size: 0.875rem;
     }
 }
